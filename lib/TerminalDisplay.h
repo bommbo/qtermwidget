@@ -659,7 +659,8 @@ private:
     // determine the width of this text
     int textWidth(int startColumn, int length, int line) const;
     // determine the area that encloses this series of characters
-    QRect calculateTextArea(int topLeftX, int topLeftY, int startColumn, int line, int length);
+    QRect calculateTextArea(int topLeftX, int topLeftY, int startColumn, int line, int length,
+                            const QTransform &textScale);
 
     // divides the part of the display specified by 'rect' into
     // fragments according to their colors and styles and calls
@@ -728,6 +729,11 @@ private:
     // returns the position of the cursor in columns and lines
     QPoint cursorPosition() const;
 
+    QPoint findLineStart(const QPoint &pnt);
+    QPoint findLineEnd(const QPoint &pnt);
+    QPoint findWordStart(const QPoint &pnt);
+    QPoint findWordEnd(const QPoint &pnt);
+
     // redraws the cursor
     void updateCursor();
 
@@ -737,6 +743,8 @@ private:
     bool isLineCharString(const std::wstring& string) const;
 
     void hideStaleMouse() const; // conditionally hides the mouse cursor
+
+    int loc(int x, int y) const;
 
     // the window onto the terminal screen which this display
     // is currently showing.

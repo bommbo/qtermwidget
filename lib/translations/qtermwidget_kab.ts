@@ -6,22 +6,22 @@
     <message>
         <location filename="../Session.cpp" line="448"/>
         <source>Bell in session &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Asṭenṭen deg tɣimit &apos;%1&apos;</translation>
     </message>
     <message>
         <location filename="../Session.cpp" line="600"/>
         <source>Session &apos;%1&apos; exited with code %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiɣimit &apos;%1&apos; teffeɣ s tengalt %2.</translation>
     </message>
     <message>
         <location filename="../Session.cpp" line="602"/>
         <source>Session &apos;%1&apos; crashed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiɣimit &apos;%1&apos; teɣli.</translation>
     </message>
     <message>
         <location filename="../Session.cpp" line="607"/>
         <source>Session &apos;%1&apos; exited unexpectedly.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiɣimit &apos;%1&apos; teffeɣ s wudem ur netturaǧu ara.</translation>
     </message>
 </context>
 <context>
@@ -29,22 +29,22 @@
     <message>
         <location filename="../TerminalDisplay.cpp" line="1278"/>
         <source>Size: XXX x XXX</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiddi: XXX x XXX</translation>
     </message>
     <message>
         <location filename="../TerminalDisplay.cpp" line="1290"/>
         <source>Size: %1 x %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiddi: %1 x %2</translation>
     </message>
     <message>
         <location filename="../TerminalDisplay.cpp" line="2790"/>
         <source>Paste multiline text</source>
-        <translation type="unfinished"></translation>
+        <translation>Senṭeḍ aḍris n aget n yizirig</translation>
     </message>
     <message>
         <location filename="../TerminalDisplay.cpp" line="2791"/>
         <source>Are you sure you want to paste this text?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tebɣiḍ ad tsenteḍeḍ aḍris-agi?</translation>
     </message>
     <message>
         <location filename="../TerminalDisplay.cpp" line="3261"/>
@@ -57,7 +57,7 @@
     <message>
         <location filename="../Vt102Emulation.cpp" line="1106"/>
         <source>No keyboard translator available.  The information needed to convert key presses into characters to send to the terminal is missing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ulac amsuqqel n unasiw iwejden.  Talɣut ilaqen i uselket n usiti n tqeffalt ɣer isekkilen akken ad ttwaznen ɣer tdiwent ulac-itent.</translation>
     </message>
 </context>
 <context>
@@ -65,7 +65,7 @@
     <message>
         <location filename="../TerminalDisplay.cpp" line="2797"/>
         <source>Show Details...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sken ifatusen...</translation>
     </message>
 </context>
 <context>
@@ -74,12 +74,12 @@
         <location filename="../ColorScheme.cpp" line="275"/>
         <location filename="../ColorScheme.cpp" line="290"/>
         <source>Un-named Color Scheme</source>
-        <translation type="unfinished"></translation>
+        <translation>Azenziɣ n yini ur war isem</translation>
     </message>
     <message>
         <location filename="../ColorScheme.cpp" line="461"/>
         <source>Accessible Color Scheme</source>
-        <translation type="unfinished"></translation>
+        <translation>Azenziɣ n yini uffar</translation>
     </message>
     <message>
         <location filename="../Filter.cpp" line="520"/>
@@ -94,7 +94,7 @@
     <message>
         <location filename="../Filter.cpp" line="525"/>
         <source>Send Email To...</source>
-        <translation type="unfinished"></translation>
+        <translation>Azen imayl i...</translation>
     </message>
     <message>
         <location filename="../Filter.cpp" line="526"/>
@@ -107,12 +107,12 @@
     <message>
         <location filename="../qtermwidget.cpp" line="465"/>
         <source>Color Scheme Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuccḍa n uzenziɣ n yiniten</translation>
     </message>
     <message>
         <location filename="../qtermwidget.cpp" line="466"/>
         <source>Cannot load color scheme: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ulamek asali n uzenziɣ n yini: %1</translation>
     </message>
 </context>
 <context>
@@ -125,17 +125,17 @@
     <message>
         <location filename="../SearchBar.cpp" line="45"/>
         <source>Regular expression</source>
-        <translation type="unfinished"></translation>
+        <translation>Tanfalit talugant</translation>
     </message>
     <message>
         <location filename="../SearchBar.cpp" line="49"/>
         <source>Highlight all matches</source>
-        <translation type="unfinished"></translation>
+        <translation>Sebṛuṛeq akk yemṣadan</translation>
     </message>
     <message>
         <location filename="../SearchBar.ui" line="14"/>
         <source>SearchBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Afeggag n unadi</translation>
     </message>
     <message>
         <location filename="../SearchBar.ui" line="20"/>

@@ -11,9 +11,8 @@
     Library General Public License for more details.
 
     You should have received a copy of the GNU Library General Public License
-    along with this library; see the file COPYING.LIB.  If not, write to
-    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-    Boston, MA 02110-1301, USA.
+    along with this library; see the file COPYING.LIB.  If not, see
+    <https://www.gnu.org/licenses/>.
 */
 
 
@@ -160,6 +159,12 @@ public:
     //! Return current key bindings
     QString keyBindings() override;
 
+    // Set the directory in which to look for key bindings
+    void setCustomKeyBindingsDir(const QString& custom_dir);
+    // Reset the directory in which to look for key bindings to the default
+    void clearCustomKeyBindingsDir();
+
+
     void setMotionAfterPasting(int) override;
 
     /** Return the number of lines in the history buffer. */
@@ -287,6 +292,12 @@ signals:
     void profileChanged(const QString & profile);
 
     void titleChanged();
+
+    /**
+     * Emitted when the current working directory of the active session
+     * has changed.
+     */
+    void currentDirectoryChanged(const QString &dir);
 
     /**
      * Signals that we received new data from the process running in the

@@ -12,9 +12,8 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
-    02110-1301  USA.
+    along with this program; if not, see
+    <https://www.gnu.org/licenses/>.
 */
 
 #ifndef FILTER_H
@@ -142,7 +141,12 @@ public:
      * Empties the filters internal buffer and resets the line count back to 0.
      * All hotspots are deleted.
      */
-    void reset();
+    virtual void reset();
+
+    /**
+     * Clears the lists of hotspots without deleting hotspots.
+     */
+    void clear();
 
     /** Adds a new line of text to the filter and increments the line count */
     //void addLine(const QString& string);
@@ -229,11 +233,11 @@ public:
 
 protected:
     /**
-     * Called when a match for the regular expression is encountered.  Subclasses should reimplement this
-     * to return custom hotspot types
+     * Called when a match for the regular expression is encountered. Subclasses should reimplement
+     * this to get custom hotspot types and add them to the lists of hotspots.
      */
-    virtual RegExpFilter::HotSpot* newHotSpot(int startLine,int startColumn,
-                                    int endLine,int endColumn);
+    virtual void newHotSpot(int startLine, int startColumn, int endLine, int endColumn,
+                            const QStringList& captureList);
 
 private:
     QRegularExpression _searchText;
@@ -282,9 +286,14 @@ public:
     };
 
     UrlFilter();
+    ~UrlFilter() override;
+
+    void process() override;
+
+    void reset() override;
 
 protected:
-    RegExpFilter::HotSpot* newHotSpot(int,int,int,int) override;
+    void newHotSpot(int, int, int, int, const QStringList&) override;
 
 private:
 
@@ -293,6 +302,8 @@ private:
 
     // combined OR of FullUrlRegExp and EmailAddressRegExp
     static const QRegularExpression CompleteUrlRegExp;
+
+    QList<UrlFilter::HotSpot*> _oldHotspotList;
 signals:
     void activated(const QUrl& url, bool fromContextMenu);
 };

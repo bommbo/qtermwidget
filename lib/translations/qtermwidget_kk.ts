@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="kk">
 <context>
     <name>Konsole::Session</name>
     <message>
         <location filename="../Session.cpp" line="481"/>
         <source>Bell in session &apos;%1&apos;</source>
-        <translation>Сигнал у сеансі &apos;%1&apos;</translation>
+        <translation>&apos;%1&apos; сессиясындағы дыбыстық белгі</translation>
     </message>
     <message>
         <location filename="../Session.cpp" line="663"/>
         <source>Session &apos;%1&apos; exited with code %2.</source>
-        <translation>Сеанс &apos;%1&apos; завершено з кодом %2.</translation>
+        <translation>&apos;%1&apos; сессиясы %2 кодымен аяқталды.</translation>
     </message>
     <message>
         <location filename="../Session.cpp" line="665"/>
         <source>Session &apos;%1&apos; crashed.</source>
-        <translation>Збій сеансу &apos;%1&apos;.</translation>
+        <translation>&apos;%1&apos; сессиясы апатты түрде аяқталды.</translation>
     </message>
     <message>
         <location filename="../Session.cpp" line="670"/>
         <source>Session &apos;%1&apos; exited unexpectedly.</source>
-        <translation>Сеанс &apos;%1&apos; раптово завершився.</translation>
+        <translation>&apos;%1&apos; сессиясы күтпеген жерден аяқталды.</translation>
     </message>
 </context>
 <context>
@@ -29,27 +29,27 @@
     <message>
         <location filename="../TerminalDisplay.cpp" line="1312"/>
         <source>Size: XXX x XXX</source>
-        <translation>Розмір: XXX x XXX</translation>
+        <translation>Өлшемі: XXX x XXX</translation>
     </message>
     <message>
         <location filename="../TerminalDisplay.cpp" line="1324"/>
         <source>Size: %1 x %2</source>
-        <translation>Розмір: %1 x %2</translation>
+        <translation>Өлшемі: %1 x %2</translation>
     </message>
     <message>
         <location filename="../TerminalDisplay.cpp" line="2989"/>
         <source>Paste multiline text</source>
-        <translation>Вставити багаторядковий текст</translation>
+        <translation>Көп жолды мәтінді кірістіру</translation>
     </message>
     <message>
         <location filename="../TerminalDisplay.cpp" line="2990"/>
         <source>Are you sure you want to paste this text?</source>
-        <translation>Ви впевнені, що хочете вставити цей текст?</translation>
+        <translation>Бұл мәтінді кірістіруге сенімдісіз бе?</translation>
     </message>
     <message>
         <location filename="../TerminalDisplay.cpp" line="3462"/>
         <source>&lt;qt&gt;Output has been &lt;a href=&quot;http://en.wikipedia.org/wiki/Flow_control&quot;&gt;suspended&lt;/a&gt; by pressing Ctrl+S.  Press &lt;b&gt;Ctrl+Q&lt;/b&gt; to resume.&lt;/qt&gt;</source>
-        <translation>&lt;qt&gt;Виведення було &lt;a href=&quot;http://en.wikipedia.org/wiki/Flow_control&quot;&gt;призупинено&lt;/a&gt; натисканням Ctrl+S.  Натисніть &lt;b&gt;Ctrl+Q&lt;/b&gt; для продовження.&lt;/qt&gt;</translation>
+        <translation>&lt;qt&gt;Шығыс Ctrl+S пернесін басу арқылы &lt;a href=&quot;http://en.wikipedia.org/wiki/Flow_control&quot;&gt;аялдатылды&lt;/a&gt;. Жалғастыру үшін &lt;b&gt;Ctrl+Q&lt;/b&gt; басыңыз.&lt;/qt&gt;</translation>
     </message>
 </context>
 <context>
@@ -57,7 +57,7 @@
     <message>
         <location filename="../Vt102Emulation.cpp" line="1150"/>
         <source>No keyboard translator available.  The information needed to convert key presses into characters to send to the terminal is missing.</source>
-        <translation>Не доступний транслятор клавіатури.  Відсутня  інформація, необхідна для перетворення натискання клавіш у символи та надсилання у термінал.</translation>
+        <translation>Пернетақта аудармашысы қолжетімсіз. Перне басуларын терминалға жіберілетін таңбаларға түрлендіру үшін қажетті ақпарат жоқ.</translation>
     </message>
 </context>
 <context>
@@ -65,7 +65,7 @@
     <message>
         <location filename="../TerminalDisplay.cpp" line="2996"/>
         <source>Show Details...</source>
-        <translation>Показати подробиці...</translation>
+        <translation>Мәліметтерді көрсету...</translation>
     </message>
 </context>
 <context>
@@ -74,32 +74,32 @@
         <location filename="../ColorScheme.cpp" line="276"/>
         <location filename="../ColorScheme.cpp" line="291"/>
         <source>Un-named Color Scheme</source>
-        <translation>Колірна схема без назви</translation>
+        <translation>Атаусыз түстер схемасы</translation>
     </message>
     <message>
         <location filename="../ColorScheme.cpp" line="462"/>
         <source>Accessible Color Scheme</source>
-        <translation>Колірна схема для людей з вадами зору</translation>
+        <translation>Қолжетімді түстер схемасы</translation>
     </message>
     <message>
         <location filename="../Filter.cpp" line="603"/>
         <source>Open Link</source>
-        <translation>Відкрити посилання</translation>
+        <translation>Сілтемені ашу</translation>
     </message>
     <message>
         <location filename="../Filter.cpp" line="604"/>
         <source>Copy Link Address</source>
-        <translation>Копіювати адресу посилання</translation>
+        <translation>Сілтеме адресін көшіру</translation>
     </message>
     <message>
         <location filename="../Filter.cpp" line="608"/>
         <source>Send Email To...</source>
-        <translation>Надіслати е-поштою...</translation>
+        <translation>Электрондық поштаны жіберу...</translation>
     </message>
     <message>
         <location filename="../Filter.cpp" line="609"/>
         <source>Copy Email Address</source>
-        <translation>Копіювати адресу е-пошти</translation>
+        <translation>Электрондық пошта адресін көшіру</translation>
     </message>
 </context>
 <context>
@@ -107,12 +107,12 @@
     <message>
         <location filename="../qtermwidget.cpp" line="481"/>
         <source>Color Scheme Error</source>
-        <translation>Помилка колірної схеми</translation>
+        <translation>Түстер схемасының қатесі</translation>
     </message>
     <message>
         <location filename="../qtermwidget.cpp" line="482"/>
         <source>Cannot load color scheme: %1</source>
-        <translation>Не вдалося завантажити колірну схему: %1</translation>
+        <translation>Түстер схемасын жүктеу мүмкін емес: %1</translation>
     </message>
 </context>
 <context>
@@ -120,22 +120,22 @@
     <message>
         <location filename="../SearchBar.cpp" line="39"/>
         <source>Match case</source>
-        <translation>Враховувати регістр</translation>
+        <translation>Регистрді ескеру</translation>
     </message>
     <message>
         <location filename="../SearchBar.cpp" line="45"/>
         <source>Regular expression</source>
-        <translation>Регулярний вираз</translation>
+        <translation>Тұрақты өрнек</translation>
     </message>
     <message>
         <location filename="../SearchBar.cpp" line="49"/>
         <source>Highlight all matches</source>
-        <translation>Підсвітити всі збіги</translation>
+        <translation>Барлық сәйкестіктерді ерекшелеу</translation>
     </message>
     <message>
         <location filename="../SearchBar.ui" line="14"/>
         <source>SearchBar</source>
-        <translation>ПанельПошуку</translation>
+        <translation>Іздеу жолағы</translation>
     </message>
     <message>
         <location filename="../SearchBar.ui" line="20"/>
@@ -145,7 +145,7 @@
     <message>
         <location filename="../SearchBar.ui" line="32"/>
         <source>Find:</source>
-        <translation>Знайти:</translation>
+        <translation>Табу:</translation>
     </message>
     <message>
         <location filename="../SearchBar.ui" line="42"/>

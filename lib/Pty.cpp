@@ -38,6 +38,7 @@
 #include <csignal>
 
 // Qt
+#include <QFileInfo>
 #include <QStringList>
 #include <QtDebug>
 
@@ -133,24 +134,49 @@ char Pty::erase() const
     return _eraseChar;
 }
 
+void Pty::setInitialWorkingDirectory(const QString &dir)
+{
+    QString pwd = dir;
+
+    // remove trailing slash in the path when appropriate
+    // example: /usr/share/icons/ ==> /usr/share/icons
+    if (pwd.length() > 1 && pwd.endsWith(QLatin1Char('/'))) {
+        pwd.chop(1);
+    }
+
+    setWorkingDirectory(pwd);
+
+    // setting PWD to "." will cause problem for bash & zsh
+    if (pwd != QLatin1String(".")) {
+        // Preserve the inherited PWD if it resolves to the same real directory.
+        // This keeps symlink-based paths intact (e.g., when a file manager opens
+        // a terminal in a symlinked directory with PWD set to the symlink path).
+        const QString inheritedPwd = QString::fromLocal8Bit(qgetenv("PWD"));
+        if (inheritedPwd.isEmpty()
+            || QFileInfo(inheritedPwd).canonicalFilePath() != QFileInfo(pwd).canonicalFilePath()) {
+            setEnv(QStringLiteral("PWD"), pwd);
+        }
+    }
+}
+
 void Pty::addEnvironmentVariables(const QStringList& environment)
 {
-
     bool termEnvVarAdded = false;
     for (const QString &pair : environment)
     {
         // split on the first '=' character
         int pos = pair.indexOf(QLatin1Char('='));
 
-        if ( pos >= 0 )
+        if (pos >= 0)
         {
             QString variable = pair.left(pos);
-            QString value = pair.mid(pos+1);
+            QString value = pair.mid(pos + 1);
 
-            setEnv(variable,value);
+            setEnv(variable, value);
 
             if (variable == QLatin1String("TERM")) {
                 termEnvVarAdded = true;
+            }
         }
     }
 
@@ -158,7 +184,6 @@ void Pty::addEnvironmentVariables(const QStringList& environment)
     if (!termEnvVarAdded) {
         setEnv(QStringLiteral("TERM"), QStringLiteral("xterm-256color"));
     }
-}
 }
 
 int Pty::start(const QString& program,
