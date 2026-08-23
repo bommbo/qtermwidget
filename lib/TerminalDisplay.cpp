@@ -107,12 +107,12 @@ const QChar LTR_OVERRIDE_CHAR( 0x202D );
 
 inline int TerminalDisplay::loc(int x, int y) const
 {
-    if (y < 0 || y >= _lines) {
-        qWarning() << "loc(): Y:" << y << ", Lines:" << _lines;
-    }
-    if (x < 0 || x >= _columns) {
-        qWarning() << "loc(): X:" << x << ", Columns:" << _columns;
-    }
+    // if (y < 0 || y >= _lines) {
+    //     qWarning() << "loc(): Y:" << y << ", Lines:" << _lines;
+    // }
+    // if (x < 0 || x >= _columns) {
+    //     qWarning() << "loc(): X:" << x << ", Columns:" << _columns;
+    // }
 
     // Q_ASSERT(y >= 0 && y < _lines);
     // Q_ASSERT(x >= 0 && x < _columns);
@@ -1513,6 +1513,24 @@ void TerminalDisplay::paintEvent( QPaintEvent* pe )
         QRect r = _backgroundImage.rect();
         r.moveCenter(cr.center());
         paint.drawPixmap(r.topLeft(), _backgroundImage);
+    }
+    else if (_backgroundMode == Fill)
+    { // zoom in/out the image to fill all empty space
+        QRect r = _backgroundImage.rect();
+        qreal wRatio = static_cast<qreal>(cr.width()) / r.width();
+        qreal hRatio = static_cast<qreal>(cr.height()) / r.height();
+        if (wRatio < hRatio)
+        {
+            r.setWidth(qRound(r.width() * hRatio));
+            r.setHeight(cr.height());
+        }
+        else
+        {
+            r.setHeight(qRound(r.height() * wRatio));
+            r.setWidth(cr.width());
+        }
+        r.moveCenter(cr.center());
+        paint.drawPixmap(r, _backgroundImage, _backgroundImage.rect());
     }
     else //if (_backgroundMode == None)
     {
@@ -3547,8 +3565,7 @@ void TerminalDisplay::dropEvent(QDropEvent* event)
   QString dropText;
   if (!urls.isEmpty())
   {
-      // TODO/FIXME: escape or quote pasted things if necessary...
-      qDebug() << "TerminalDisplay: handling urls. It can be broken. Report any errors, please";
+    // TODO/FIXME: escape or quote pasted things if necessary...
     for ( int i = 0 ; i < urls.count() ; i++ )
     {
         //KUrl url = KIO::NetAccess::mostLocalUrl( urls[i] , 0 );
